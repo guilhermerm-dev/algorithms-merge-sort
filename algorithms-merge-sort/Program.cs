@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿
 namespace algorithms_merge_sort
 {
     class Program
