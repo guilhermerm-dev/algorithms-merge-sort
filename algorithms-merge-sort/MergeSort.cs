@@ -5,8 +5,6 @@ namespace algorithms_merge_sort
 {
     public class MergeSort
     {
-        private const int Two = 2;
-
 
         public static void Execute(int[] array)
         {
@@ -15,16 +13,21 @@ namespace algorithms_merge_sort
 
         private static void Sort(int[] array, int firstIndex, int lastIndex)
         {
-            if (array is not null && firstIndex < lastIndex && firstIndex >= 0
-                 && lastIndex < array.Length && array.Length != 0)
+            if (ValidateSortParameters(array, firstIndex, lastIndex))
             {
-                int middle = ((firstIndex + lastIndex) / Two);
+                int middle = ((firstIndex + lastIndex) / 2);
 
                 Sort(array, firstIndex, middle);
                 Sort(array, middle + 1, lastIndex);
                 Merge(array, firstIndex, middle, lastIndex);
             }
 
+        }
+
+        private static bool ValidateSortParameters(int[] array, int firstIndex, int lastIndex)
+        {
+            return array is not null && firstIndex < lastIndex && firstIndex >= 0
+                 && lastIndex < array.Length && array.Length != 0;
         }
 
         private static void Merge(int[] array, int firstIndex, int middle, int lastIndex)
