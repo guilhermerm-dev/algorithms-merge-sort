@@ -1,4 +1,4 @@
-Algoritmos - Bubble Sort
+Algoritmos - Merge Sort
 =====================
 Este projeto tem como intuito implementar o algoritmo de ordenação Merge Sort. 
 
